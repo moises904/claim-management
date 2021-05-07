@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("claim")
-@Data
+
 public class ClaimController {
+
 
 
 
