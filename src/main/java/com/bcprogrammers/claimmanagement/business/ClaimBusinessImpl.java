@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -45,10 +46,10 @@ public class ClaimBusinessImpl implements ClaimBusiness {
 
     @Override
     public Observable<ClaimRs> list(Integer documentType, String documentNumber) {
-        return Observable.empty();
-
+        return Observable.fromIterable(claimRepositoryJpa.findClaimsByUser(documentType, documentNumber)
+                .stream().map(claim -> ClaimRs.builder().build())
+                .collect(Collectors.toList()));
     }
-
 
     private final Function<User, ClaimSaveRs> mapEntityToRs =
             (user) -> ClaimSaveRs.builder()
