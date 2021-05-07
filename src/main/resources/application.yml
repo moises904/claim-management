@@ -1,5 +1,5 @@
 server:
-  port: 9081
+  port: 9091
 
 spring:
   #  spring:
@@ -9,7 +9,7 @@ spring:
     name: claim-management
 
   datasource:
-    url: jdbc:sqlserver://serverbcprogrammers.database.windows.net:1433;database=demo;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    url: jdbc:sqlserver://serverbcprogrammers.database.windows.net:1433;database=claim_management;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
     username: adminbcp
     password: BCProgrammers1.
     initialization-mode: always
