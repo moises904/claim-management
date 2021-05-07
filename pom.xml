@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>claim-management</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>claim-management</name>
+	<description>Claim Management</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -65,6 +65,31 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>1.8.0</version>
+				<configuration>
+					<from>
+						<image>openjdk:11-jre</image>
+					</from>
+					<to>
+						<image>acrpurplebcp.azurecr.io/${parent.artifactId}-${project.name}:1.0.0</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<jvmFlag>-Xms2048m</jvmFlag>
+							<jvmFlag>-Xmx2048m</jvmFlag>
+						</jvmFlags>
+						<ports>
+							<port>9081</port>
+						</ports>
+						<labels>
+							<key1>${project.version}</key1>
+						</labels>
+					</container>
 				</configuration>
 			</plugin>
 		</plugins>
