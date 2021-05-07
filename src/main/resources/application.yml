@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+spring:
+  #  spring:
+  #    profiles:
+  #      active: dev
+  application:
+    name: claim-management
+
+  datasource:
+    url: jdbc:sqlserver://tsttest.database.windows.net:1433;database=azureuser;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: adminkey
+    password: Sofiaqsy1.
+    initialization-mode: always
