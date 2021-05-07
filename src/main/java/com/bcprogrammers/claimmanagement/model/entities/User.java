@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Builder
@@ -14,7 +16,6 @@ import javax.persistence.*;
 @Table(name = "USERM")
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class User {
 
     @Id
@@ -33,4 +34,9 @@ public class User {
 
     @Column(name = "EMAIL_ADDRESS")
     private String emailAddress;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Claim> items = new ArrayList<Claim>();
+
+
 }

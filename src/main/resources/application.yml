@@ -13,3 +13,9 @@ spring:
     username: adminbcp
     password: BCProgrammers1.
     initialization-mode: always
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: "CLAIM_MANAGEMENT_V2"
+        show_sql: true

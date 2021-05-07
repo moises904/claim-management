@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Builder
@@ -42,4 +44,7 @@ public class Claim {
 
     @JoinColumn(name = "LAST_UPDATED_BY")
     private String lastUpdatedBy;
+
+    @OneToMany(mappedBy = "claim", cascade = CascadeType.MERGE)
+    private List<Status> status = new ArrayList<Status>();
 }

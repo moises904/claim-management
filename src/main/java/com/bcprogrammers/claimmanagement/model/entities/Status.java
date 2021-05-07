@@ -19,21 +19,22 @@ public class Status {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "STATUS_ID")
+    @JoinColumn(name = "STATUS_ID")
     private Long statusId;
 
-    @Column(name = "CLAIM_ID")
-    private Long documentType;
-
-    @Column(name = "COMMENT")
+    @JoinColumn(name = "COMMENT")
     private String comment;
 
-    @Column(name = "STATUS")
+    @JoinColumn(name = "STATUS")
     private String phoneNumber;
 
-    @Column(name = "LAST_UPDATED_DATE")
+    @JoinColumn(name = "LAST_UPDATED_DATE")
     private LocalDateTime lastUpdatedDate;
 
-    @Column(name = "LAST_UPDATED_BY")
+    @JoinColumn(name = "LAST_UPDATED_BY")
     private String lastUpdatedBy;
+
+    @ManyToOne
+    @JoinColumn(name = "CLAIM_ID")
+    private Claim claim;
 }
